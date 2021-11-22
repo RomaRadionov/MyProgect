@@ -1,0 +1,166 @@
+/*==================== BASE ====================*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+/*==================== CARD ====================*/
+.products__list{
+    display: flex;
+}
+
+.card{
+    width: 20%;
+    /* border: 1px solid red; */
+    padding: 20px 15px;
+    margin: 5px;
+    transition: 1s;
+}
+
+.card:hover{
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15),
+    -6px -6px 10px -1px rgba(255,255,255,.7);
+}
+
+.header{
+    display: block;
+    margin: 0 auto;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.selected{
+    padding: 8px;
+    border: 2px solid black;
+}
+
+.color-selection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.color-selection__item{
+    padding: 3px;
+}
+
+ul{
+    list-style: none;
+}
+
+.color-selection__color{
+    display: inline-block;
+    background-color: royalblue;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+}
+
+.color-selection__link{
+    display: block;
+}
+
+/*======== CONTENT ========*/
+
+.content{
+    margin: 10px;
+}
+
+.rectangle-labels{
+    display: flex;
+    height: 30px;
+    margin-top: 10px;
+    justify-content: space-evenly;
+}
+
+.rectangle-labels__item{
+    cursor: pointer;
+}
+
+.rectangle-labels__item:hover{
+    background-color: rgb(131, 128, 128, .2);
+    transition: 1s;
+}
+
+/*======== ACTIONS ========*/
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.rating{
+    margin-right: 15px;
+}
+
+.testimonial__icon-star{
+    color: #f97988;
+    cursor: pointer;
+}
+
+.rating-count{
+    color: #f97988;
+    margin-left: 5px;
+}
+
+.review-btn{
+    color: cornflowerblue;
+}
+
+.compare{
+    position: relative;
+    cursor: pointer;
+    color: cornflowerblue;
+}
+
+.favorite{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+/*======== BUY-BOX ========*/
+
+.buy-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.buy-button{
+    background-color: #e31837;
+    color: #fff;
+    width: 52px;
+    height: 43px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buy-button:hover{
+    background-color: #dd9595;
+    transition: 1s;
+}
+
+.uil-shopping-cart-alt{
+    font-size: 30px;
+}
