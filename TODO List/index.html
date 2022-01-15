@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1caffb19f3.js" crossorigin="anonymous"></script>
+    <title>To Do List</title>
+</head>
+<body id="body">
+
+    <div class="wrapper">
+        <h1>ToDoList</h1>
+        <div class="inputField">
+            <input type="text" placeholder="Create a new task..." name="addItem" id="description-task">
+            <div class="entering-numbers" title="Важніть завдання">
+                <button class="arrow-left" id="left"><i class="fas fa-caret-left"></i></button>
+                <input type="text" value="1" id="important" readonly>
+                <button class="arrow-right" id="right"><i class="fas fa-caret-right"></i></button>
+            </div>
+            <button class="btnAdd" id="add-task-btn">Додати</button>
+        </div>
+        <ul class="todoList" id="todoList"></ul>
+    </div>
+
+    <div class="modal-active" id="modal-active"></div>
+    <div class="modal-empty" id="modal-empty"></div>
+
+    <div class="modal__edit">
+        <div class="modal__content">
+            <div class="modal__body">
+                <p class="modal__title">Редагувати задачу</p>
+                <button class="modal-delete" id="delete">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

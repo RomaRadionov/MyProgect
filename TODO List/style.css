@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e3edf7;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 25px;
+    color: #555;
+}
+
+ul{
+    position: relative;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 10px;
+    border-radius: 3px;
+    background: #d3dce5;
+}
+
+li:hover{
+    box-shadow: inset 4px 4px 6px -1px rgb(0 0 0 / 20%), inset -4px -4px 6px -1px rgb(255 255 255 / 70%), -0.5px -0.5px 0px rgb(255 255 255 / 10%), 0.5px 0.5px 0px rgb(0 0 0 / 15%), 0px 12px 10px -10px rgb(0 0 0 / 5%);
+}
+
+li p{
+    flex-grow: 1;
+}
+
+i{
+    font-size: 16px;
+}
+
+.wrapper{
+    max-width: 910px;
+    min-width: 310px;
+    padding: 30px;
+    margin: 10px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15),
+                -6px -6px 10px -1px rgba(255,255,255,.7);
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 8px;
+}
+
+.inputField{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.inputField input{
+    width: 100%;
+    padding: 10px 0 0;
+    margin: 0 0 15px 0;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid rgb(128 128 128 / 30%);
+}
+
+.btnAdd{
+    height: 35px;
+    font-weight: bolder;
+    padding: 10px 35px;
+    cursor: pointer;
+    border-radius: 3px;
+    background: #00acee;
+}
+
+.container{
+    flex-grow: 1;
+}
+
+.task{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.task::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -35px;
+    background: #8add8a;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.edite{
+    background: none;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #00acee;
+}
+
+.delete{
+    background: none;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #ef6767;
+}
+
+.delete i{
+    font-size: 23px;
+}
+
+.done{
+    background: #b3d2dd;
+}
+
+.doneTask{
+    text-decoration: line-through;
+}
+
+.done::after{
+    content: "\2713";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -25px;
+    background: #8add8a;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.list{
+    position: relative;
+}
+
+.ckeckbox{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -25px;
+    background: #8add8a;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.checkmark{
+    display: none;
+}
+
+.custom-checkbox input:checked + .ckeckbox .checkmark{
+    display: block;
+}
+
+.hidden-checkbox{
+    -webkit-appearance: none;
+}
+
+.done-btn{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -24px;
+    background: #8add8a;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.modal__delete.active, .empty__modal.active, .modal__edit.active{
+    display: block;
+}
+
+.modal__delete, .empty__modal, .modal__edit{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(227, 237, 247, .7);
+    z-index: 2;
+    display: none;
+}
+
+.modal__content, .empty__content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.modal__body, .empty__body{
+    margin: auto;
+    width: 380px;
+    background: #e3edf7;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15),
+                -6px -6px 10px -1px rgba(255,255,255,.7);
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 8px;
+    text-align: center;
+    padding: 50px 65px;
+    position: relative;
+}
+
+.modal-delete{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    background: none;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #ef6767;
+}
+
+.modal__title, .empty__title{
+    margin: 0 0 20px 0;
+}
+
+.modal__actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entering-numbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.entering-numbers > input {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+    padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	border: none;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.arrow-left i, .arrow-right i{
+    font-size: 30px;
+}
+
+.arrow-left, .arrow-right{
+    cursor: pointer;
+    color: #00acee;
+}
