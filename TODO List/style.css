@@ -4,6 +4,7 @@
     border: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body{
@@ -25,14 +26,12 @@ ul{
 }
 
 li{
-    display: flex;
-    justify-content: space-between;
     list-style: none;
     align-items: center;
     list-style: none;
     margin: 10px 0 0;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 7px;
     background: #d3dce5;
 }
 
@@ -48,7 +47,105 @@ i{
     font-size: 16px;
 }
 
+input{
+    outline: none;
+    background: transparent;
+}
+
+button{
+    background: transparent;
+    cursor: pointer;
+}
+
+/*========== FORM BOX ==========*/
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15),
+    -6px -6px 10px -1px rgba(255,255,255,.7);
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.button-box{
+    width: 212px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #d3dce5;
+    border-radius: 30px;
+}
+
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn-toggleForm{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #00acee, #00eebd);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-bottom: 2px solid rgb(128 128 128 / 30%);
+}
+
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #00acee, #00eebd);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.check-box{
+    margin: 30px 10px 30px 0;
+}
+
+span{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#login{
+    left: 50px;
+}
+
+#register{
+    left: 450px;
+}
+
+/*========== WRAPPER ==========*/
 .wrapper{
+    display: none;
     max-width: 910px;
     min-width: 310px;
     padding: 30px;
@@ -63,6 +160,7 @@ i{
     display: flex;
     margin-bottom: 15px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .inputField input{
@@ -78,7 +176,6 @@ i{
     height: 35px;
     font-weight: bolder;
     padding: 10px 35px;
-    cursor: pointer;
     border-radius: 3px;
     background: #00acee;
 }
@@ -109,16 +206,12 @@ i{
 }
 
 .edite{
-    background: none;
     margin: 0 10px;
-    cursor: pointer;
     color: #00acee;
 }
 
 .delete{
-    background: none;
     margin: 0 10px;
-    cursor: pointer;
     color: #ef6767;
 }
 
@@ -139,7 +232,7 @@ i{
     position: absolute;
     width: 20px;
     height: 20px;
-    left: -25px;
+    top: 12px;
     background: #8add8a;
     font-size: 15px;
     text-align: center;
@@ -152,10 +245,8 @@ i{
 }
 
 .ckeckbox{
-    position: absolute;
     width: 20px;
     height: 20px;
-    left: -25px;
     background: #8add8a;
     font-size: 15px;
     text-align: center;
@@ -179,7 +270,7 @@ i{
     position: absolute;
     width: 20px;
     height: 20px;
-    left: -24px;
+    left: 10px;
     background: #8add8a;
     font-size: 15px;
     text-align: center;
@@ -254,19 +345,34 @@ i{
 	display: inline-block;
 	width: 25px;
 	height: 25px;
+    background: none;
     padding: 0;
 	margin: 0 auto;
 	text-align: center;
 	border: none;
 	font-size: 17px;
 	font-weight: 500;
+    outline: none;
 }
 
 .arrow-left i, .arrow-right i{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .arrow-left, .arrow-right{
-    cursor: pointer;
     color: #00acee;
+}
+
+.list-nav{
+    display: flex;
+    align-items: center;
+}
+
+.date{
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.content{
+    display: flex;
 }

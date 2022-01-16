@@ -20,16 +20,25 @@ const createTemplate = (task, index) => {
     return `
     <label class="custom-checkbox">
         <li class="list ${task.completed ? 'done' : ''}">
-            <input onclick="completeTask(${index})" class="done-btn hidden-checkbox" type="checkbox" ${task.completed ? 'checkbox' : ''}>
-            <div class="ckeckbox">
+            <div class="list-nav">
+                <input onclick="completeTask(${index})" class="done-btn hidden-checkbox" type="checkbox" ${task.completed ? 'checkbox' : ''}>
+                <div class="ckeckbox">
                     <div class="checkmark">&#x2713;</div>
-            </div>
-            <div class="container">
-                <p class="${task.completed ? 'doneTask' : ''}">${task.description}</p>
+                </div>
                 <div class="date">${task.date}</div>
+                <div class="entering-numbers" title="Важніть завдання">
+                    <button class="arrow-left" id="left"><i class="fas fa-caret-left"></i></button>
+                    <input type="text" value="${task.important}" id="important" readonly>
+                <button class="arrow-right" id="right"><i class="fas fa-caret-right"></i></button>
+                </div>
+                <button class="edite" title="Редагувати" onclick="editeTaskModal(${index})"><i class="fas fa-pen"></i></button>
+                <button class="delete" title="Видалити" onclick="deleteTaskModal(${index})"><i class="fas fa-times"></i></button>
             </div>
-            <button class="edite" title="Редагувати"><i class="fas fa-pen"></i></button>
-            <button class="delete" title="Видалити" onclick="deleteTaskModal(${index})"><i class="fas fa-times"></i></button>
+            <div class="content">
+                <div class="container">
+                    <p class="${task.completed ? 'doneTask' : ''}">${task.description}</p>
+                </div>
+            </div>
         </li>
     </label>
     `
@@ -140,6 +149,40 @@ const deleteTask = index => {
     fillHtmlList();
 }
 
+/*==================== РЕДАГУЄМО ТАСКУ ====================*/
+const editeTaskModal = (index, task) => {
+    console.log(index, task);
+    modalEditeWindow(index, task);
+}
+
+const modalEditeWindow = (index, task) => {
+    modal.innerHTML += `
+    <div class="modal__delete active" id="modal__delete">
+        <div class="modal__content">
+            <div class="modal__body">
+                <p class="modal__title">Редагувати завдання</p>
+                <button class="modal-delete" id="delete" onclick="closeModalDeleteWindow()">&times;</button>
+                <input type="text" value="${index}">
+                <div class="modal__actions">
+                    <button class="btnAdd" onclick="editeTask(${index})">Зберегти</button>
+                    <button class="btnAdd" onclick="closeModalDeleteWindow()">Відміна</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    console.log(index.description);
+    console.log(task);
+    return modal;
+}
+
+// const editeTask = index => {
+//     console.log(index);
+//     tasks.splice(index, 1);
+//     updateLocal();
+//     fillHtmlList();
+// }
+
 /*==================== Показує в консолі на який клас нажали ====================*/
 document.addEventListener('click', (e) => {
     console.log(e.target.classList.value);
@@ -197,3 +240,19 @@ right.addEventListener('click', function(e){
         console.log("Dec: %d", n);
     }
 });
+
+/*==================== ФОРМА ВХОДУ(form-box) ПЕРЕМИКАЧ ====================*/
+let loginForm = document.getElementById("login");
+let registerForm = document.getElementById("register");
+let btnToggleForm = document.getElementById("btn-toggleForm");
+
+function register(){
+    loginForm.style.left = "-400px"
+    registerForm.style.left = "50px"
+    btnToggleForm.style.left = "102px"
+}
+function login(){
+    loginForm.style.left = "50px"
+    registerForm.style.left = "450px"
+    btnToggleForm.style.left = "0"
+}
