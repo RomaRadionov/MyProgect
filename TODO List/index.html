@@ -10,14 +10,34 @@
 </head>
 <body id="body">
 
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn-toggleForm"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <form id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="User name" required>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn">Log In</button>
+        </form>
+        <form id="register" class="input-group">
+            <input type="text" class="input-field" placeholder="User name" required>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>I agree</span>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
     <div class="wrapper">
         <h1>ToDoList</h1>
         <div class="inputField">
             <input type="text" placeholder="Create a new task..." name="addItem" id="description-task">
             <div class="entering-numbers" title="Важніть завдання">
-                <button class="arrow-left" id="left"><i class="fas fa-caret-left"></i></button>
-                <input type="text" value="1" id="important" readonly>
-                <button class="arrow-right" id="right"><i class="fas fa-caret-right"></i></button>
+                <button class="arrow-left left" id="left"><i class="fas fa-caret-left"></i></button>
+                <input class="important" type="text" value="1" id="important" readonly>
+                <button class="arrow-right right" id="right"><i class="fas fa-caret-right"></i></button>
             </div>
             <button class="btnAdd" id="add-task-btn">Додати</button>
         </div>
