@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1caffb19f3.js" crossorigin="anonymous"></script>
+    <title>To Do List</title>
+</head>
+<body class="light" id="body">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="header__nav">
+            <a href="#" class="header__logo"><h1 class="logo">ToDo</h1></a>
+            <!-- Theme change button -->
+            <i class="far fa-moon header__change-theme" id="theme-button"></i>
+            <!-- <i class="fas fa-sun"></i> -->
+        </nav>
+    </header>
+    <!--==================== FORM-BOX ====================-->
+    <div class="form-box" id="form-box">
+        <div class="form-box__buttons">
+            <div id="form-box__toggle"></div>
+            <button type="button" class="form-box__toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="form-box__toggle-btn" onclick="register()">Register</button>
+        </div>
+        <h1 class="logo">ToDo App</h1>
+        <!--==================== Авторизація ====================-->
+        <form id="login" class="form-box__input-group form-box__login">
+            <div class="form-box__input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" class="form-box__input-field" id="username" placeholder="User name" required>
+            </div>
+            <div class="form-box__input-box">
+                <i class="fas fa-lock"></i>
+                <input type="text" class="form-box__input-field" id="pass" placeholder="Enter Password" required>
+            </div>
+            <input type="checkbox" class="form-box__checkbox"><span>Remember Password</span>
+            <button type="submit" class="form-box__submit-btn" onclick="exe()">Log In</button>
+        </form>
+        <!--==================== Реєстрація ====================-->
+        <form id="register" class="form-box__input-group form-box__register">
+            <div class="form-box__input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" class="form-box__input-field" placeholder="User name" required>
+            </div>
+            <div class="form-box__input-box">
+                <i class="fas fa-lock"></i>
+                <input type="text" class="form-box__input-field" placeholder="Enter Password" required>
+            </div>
+            <input type="checkbox" class="form-box__checkbox"><span>I agree</span>
+            <button type="submit" class="form-box__submit-btn">Register</button>
+        </form>
+    </div>
+
+    <!--==================== MAIN ====================-->
+    <div class="main" id="main">
+        <h1>ToDoList</h1>
+        <div class="inputField">
+            <input class="inputField__description" type="text" placeholder="Create a new task..." name="addItem" id="description-task">
+            <div class="entering-numbers" title="Важніть завдання">
+                <button class="entering-numbers__arrow-left left" id="left"><i class="fas fa-caret-left"></i></button>
+                <input class="entering-numbers__important" type="text" value="1" id="important" readonly>
+                <button class="entering-numbers__arrow-right right" id="right"><i class="fas fa-caret-right"></i></button>
+            </div>
+            <button class="inputField__btnAdd button" id="add-task-btn">Додати</button>
+        </div>
+        <!--==================== MAIN-buttons ====================-->
+        <div class="bottom-items">
+            <div class="bottom-items__left">Завдань: <span></span></div>
+            <div class="bottom-items__filter">
+                <label>
+                    <input type="radio" name="filter" id="all">
+                    <span>All</span>
+                </label>
+                <label>
+                    <input type="radio" name="filter" id="active">
+                    <span>Active</span>
+                </label>
+                <label>
+                    <input type="radio" name="filter" id="completed">
+                    <span>Completed</span>
+                </label>
+            </div>
+            <button class="bottom-items__clear button">Clear Completed</button>
+        </div>
+        <!--==================== MAIN-TodoList ====================-->
+        <ul class="todoList" id="todoList"></ul>
+    </div>
+    <!--==================== ModalWindow ====================-->
+    <div class="modal-active" id="modal-active"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -150,19 +150,19 @@ const deleteTask = index => {
 }
 
 /*==================== РЕДАГУЄМО ТАСКУ ====================*/
-const editeTaskModal = (index, task) => {
-    console.log(index, task);
-    modalEditeWindow(index, task);
+const editeTaskModal = (index) => {
+    console.log(tasks[index].description);
+    modalEditeWindow(index);
 }
 
-const modalEditeWindow = (index, task) => {
+const modalEditeWindow = (index) => {
     modal.innerHTML += `
     <div class="modal__delete active" id="modal__delete">
         <div class="modal__content">
             <div class="modal__body">
                 <p class="modal__title">Редагувати завдання</p>
                 <button class="modal-delete" id="delete" onclick="closeModalDeleteWindow()">&times;</button>
-                <input type="text" value="${index}">
+                <textarea class="edite-input">${tasks[index].description}"</textarea>
                 <div class="modal__actions">
                     <button class="btnAdd" onclick="editeTask(${index})">Зберегти</button>
                     <button class="btnAdd" onclick="closeModalDeleteWindow()">Відміна</button>
@@ -171,17 +171,9 @@ const modalEditeWindow = (index, task) => {
         </div>
     </div>
     `;
-    console.log(index.description);
-    console.log(task);
+    console.log(index);
     return modal;
 }
-
-// const editeTask = index => {
-//     console.log(index);
-//     tasks.splice(index, 1);
-//     updateLocal();
-//     fillHtmlList();
-// }
 
 /*==================== Показує в консолі на який клас нажали ====================*/
 document.addEventListener('click', (e) => {

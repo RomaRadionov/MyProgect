@@ -59,6 +59,7 @@ button{
 
 /*========== FORM BOX ==========*/
 .form-box{
+    display: none;
     width: 380px;
     height: 480px;
     position: relative;
@@ -145,9 +146,9 @@ span{
 
 /*========== WRAPPER ==========*/
 .wrapper{
-    display: none;
+    /* display: none; */
     max-width: 910px;
-    min-width: 310px;
+    min-width: 400px;
     padding: 30px;
     margin: 10px;
     box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15),
@@ -178,6 +179,14 @@ span{
     padding: 10px 35px;
     border-radius: 3px;
     background: #00acee;
+}
+
+.edite-input{
+    max-width: 90%;
+    width: 250px;
+    height: 150px;
+    background: #d3dce5;
+    outline: none;
 }
 
 .container{
@@ -308,7 +317,7 @@ span{
     border: 1px solid rgba(0,0,0,0);
     border-radius: 8px;
     text-align: center;
-    padding: 50px 65px;
+    padding: 30px 30px;
     position: relative;
 }
 
@@ -330,7 +339,7 @@ span{
 
 .modal__actions{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
