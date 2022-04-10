@@ -350,12 +350,19 @@ li:hover{
     }
     &__edite i{
         margin: 0 10px;
+        font-size: 18px;
         color: #00acee;
+    }
+    &__edite{
+        font-size: 20px;
     }
     &__delete i{
         margin: 0 10px;
         font-size: 23px;
         color: #ef6767;
+    }
+    &__delete,&__edite{
+        border-radius: 7px;
     }
 }
 .done{
@@ -448,12 +455,12 @@ li:hover{
         font-weight: bold;
         color: var(--title-color);
     }
-    &__filter{
-        // flex-grow: 1;
-    }
-    &__clear{
-        // flex: left;
-    }
+    // &__filter{
+    //     // flex-grow: 1;
+    // }
+    // &__clear{
+    //     // flex: left;
+    // }
 }
 .hidden{
     display: none;

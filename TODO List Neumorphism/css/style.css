@@ -453,13 +453,23 @@ li:hover {
 
 .todoList__edite i {
   margin: 0 10px;
+  font-size: 18px;
   color: #00acee;
+}
+
+.todoList__edite {
+  font-size: 20px;
 }
 
 .todoList__delete i {
   margin: 0 10px;
   font-size: 23px;
   color: #ef6767;
+}
+
+.todoList__delete, .todoList__edite {
+  -webkit-border-radius: 7px;
+          border-radius: 7px;
 }
 
 .done {

@@ -31,7 +31,7 @@ const createTemplate = (task, index) => {
                     <input class="entering-numbers__important" type="text" value="${task.important}" id="important" readonly>
                 <button class="entering-numbers__arrow-right" id="right"><i class="fas fa-caret-right"></i></button>
                 </div>
-                <button class="todoList__edite" title="Редагувати" onclick="editeTaskModal(${index})"><i class="fas fa-pen"></i></button>
+                <button class="todoList__edite" title="Редагувати" onclick="editeTaskModal(${index})"><i class="fas fa-edit"></i></button>
                 <button class="todoList__delete" title="Видалити" onclick="deleteTaskModal(${index})"><i class="fas fa-times"></i></button>
             </div>
             <div class="content">
@@ -51,28 +51,35 @@ const filterTasks = () => {
     tasks = [...activeTasks,...completedTasks];
 }
 
+const filterButtonActiv = localStorage.getItem('activButton');
+console.log(filterButtonActiv);
+
+const filterChecked = () => {
+    const all = document.getElementById('all');
+    const active = document.getElementById('active');
+    const completed = document.getElementById('completed');
+    if(filterButtonActiv == 'all'){
+        all.checked = true;
+        localStorage.setItem('activButton', 'all');
+    }
+    else if(filterButtonActiv == 'active'){
+        active.checked = true;
+        localStorage.setItem('activButton', 'active');
+    }
+    else if(filterButtonActiv == 'completed'){
+        completed.checked = true;
+        localStorage.setItem('activButton', 'completed');
+        console.log(completed.checked);
+    }
+}
+
 const fillHtmlList = () => {
     document.querySelectorAll('.bottom-items__filter input').forEach(radio => {
         radio.addEventListener('change', (e) => {
             filterTodoItems(e.target.id);
         });
     });
-    const filterButtonActiv = localStorage.getItem('activButton');
 
-    // const filterChecked = () => {
-    //     const all = document.getElementById('all');
-    //     const active = document.getElementById('active');
-    //     const completed = document.getElementById('completed');
-    //     if(filterButtonActiv == 'all'){
-    //         all.checked = true;
-    //     }
-    //     else if(filterButtonActiv == 'active'){
-    //         active.checked = true;
-    //     }
-    //     else if(filterButtonActiv == 'completed'){
-    //         completed.checked = true;
-    //     }
-    // }
 
     /*==================== ФІЛЬТР ВИКОНАНИХ ТА АКТИВНИХ ТАСКІВ  ====================*/
     function filterTodoItems(id) {
@@ -128,6 +135,7 @@ const fillHtmlList = () => {
     itemsLeft.innerText = tasks.length;
 }
 
+filterChecked();
 fillHtmlList();
 
 const updateLocal = () => { // функція яка буде відправляти в localStorage наші таски
@@ -144,6 +152,7 @@ const completeTask = index => {
     }
     updateLocal();
     fillHtmlList();
+    filterChecked();
 }
 /*==================== INPUT ПОЛЕ ПУСТЕ!!! ====================*/
 let emptyTask = document.getElementById('modal-empty');
