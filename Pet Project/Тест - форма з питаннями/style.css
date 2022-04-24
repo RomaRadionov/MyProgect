@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --line-border-empty: #58a6ff;
+    --line-border-fill: #0057b8;
+    --back-color: #0d1117;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--back-color);
+}
+
+button{
+    background: #30363d;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid var(--line-border-empty);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 0 auto;
+}
+
+button:active {
+    outline: none;
+    border: 3px solid var(--line-border-fill);
+}
+
+p{
+    color: var(--line-border-empty);
+}
+
+input{
+    outline: none;
+    background: dimgray;
+    border-radius: 8px;
+    color: #fff;
+    padding: 3px 5px;
+}

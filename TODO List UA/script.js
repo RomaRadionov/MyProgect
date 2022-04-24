@@ -246,7 +246,7 @@ const modalEditeWindow = (index) => {
             <div class="modal-main__body">
                 <p class="modal-main__title">Редагувати завдання</p>
                 <button class="modal-main__close" id="delete" onclick="closeModalDeleteWindow()">&times;</button>
-                <textarea class="modal-main__input" id="modal-main__input">${tasks[index].description}</textarea>
+                <textarea class="modal-main__input" id="modal-main__input">${tasks[index].description}"</textarea>
                 <div class="modal-main__actions">
                     <button class="button" onclick="editeTask(${index})">Зберегти</button>
                     <button class="button" onclick="closeModalDeleteWindow()">Відміна</button>

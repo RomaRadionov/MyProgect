@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --line-border-empty: #ffcc00;
+    --line-border-fill: #0057b8;
+    --background:
+        linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    --back-color: #131313;
+    --back-size: 20px 20px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+    background-color: var(--back-color);
+    background-size: var(--back-size);
+}
+
+button{
+    width: 30px;
+    height: 30px;
+    background: var(--line-border-empty);
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid var(--line-border-empty);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entering-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--line-border-empty);
+}
+
+.entering-numbers button:active {
+    border-radius: 50px;
+    /* background: var(--line-border-fill); */
+    outline: none;
+    border: 3px solid var(--line-border-fill);
+}
+
+.entering-numbers__important {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background: var(--line-border-empty);
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    outline: none;
+    color: var(--title-color);
+    font-weight: bold;
+}
+
+.entering-numbers__arrow-left i, .entering-numbers__arrow-right i {
+    font-size: 25px;
+    /* margin: 0 10px; */
+}
