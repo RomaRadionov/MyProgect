@@ -35,6 +35,7 @@ body {
           align-items: center;
   min-height: 100vh;
   background: #242425;
+  padding: 0 10px;
 }
 
 body.light {

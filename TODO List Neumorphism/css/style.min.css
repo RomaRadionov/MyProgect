@@ -6,7 +6,7 @@
         inset -5px -4px 13px 0px rgb(0 0 0 / 52%),
         inset 6px 7px 12px 0px #1b1f23cf;--BxS: -3px -3px 10px rgb(255 255 255 / 5%),
     3px 3px 15px rgb(0 0 0 / 50%);--hoverS:inset -3px -3px 10px rgb(255 255 255 / 5%),
-    inset 3px 3px 15px rgb(0 0 0 / 50%);--title-color: hsl(250, 8%, 95%);--done: hsl(0, 34%, 14%);--text-color: hsl(264, 27%, 68%)}body{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;min-height:100vh;background:#242425}body.light{--BxSi:6px 6px 8px rgba(13, 39, 80, 0.25),
+    inset 3px 3px 15px rgb(0 0 0 / 50%);--title-color: hsl(250, 8%, 95%);--done: hsl(0, 34%, 14%);--text-color: hsl(264, 27%, 68%)}body{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;min-height:100vh;background:#242425;padding:0 10px}body.light{--BxSi:6px 6px 8px rgba(13, 39, 80, 0.25),
     -6px -6px 10px #fff,
     inset -8px -8px 12px rgba(255,255,255,0.7),
     inset 5px 5px 8px rgba(13,39,80,0.2);--PSD-3d:7px 7px 15px #45566754,
