@@ -1,0 +1,74 @@
+/*==================== MAIN ====================*/
+.button{
+    height: 35px;
+    font-weight: bolder;
+    padding: 10px 25px;
+    border-radius: 3px;
+    background: transparent;
+    box-shadow: var(--BxS);
+    border: 0;
+    border-radius: 30px;
+}
+
+.main{
+    // display: none;
+    max-width: 910px;
+    min-width: 400px;
+    padding: 10px 30px 30px;
+    margin: 0 auto;
+    box-shadow: var(--BxS);
+    border-radius: 8px;
+}
+
+.inputField{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+    &__description{
+        width: 100%;
+        padding: 10px 0 0;
+        background: transparent;
+        outline: none;
+        box-shadow: var(--BxSi);
+        border-radius: 50px;
+        color: var(--title-color);
+        padding: 10px 0 10px 10px;
+    }
+}
+
+.entering-numbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    box-shadow: var(--BxS);
+    border-radius: 30px;
+    button:active{
+        box-shadow: var(--hoverS);
+        border-radius: 50px;
+        // width: 27px;
+        // height: 27px;
+        outline: none;
+        border: none;
+    }
+    &__important{
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        background: transparent;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+        border: none;
+        font-size: 17px;
+        font-weight: 500;
+        outline: none;
+        color: var(--title-color);
+        font-weight: bold;
+    }
+    &__arrow-left i, &__arrow-right i{
+        font-size: 25px;
+        margin: 0 10px;
+    }
+}

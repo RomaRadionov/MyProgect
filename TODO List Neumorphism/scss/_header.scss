@@ -1,0 +1,23 @@
+/*==================== HEADER ====================*/
+.header{
+    width: 100%;
+    // position: fixed;
+    // top: 0;
+    z-index: 1000;
+    &__nav{
+        max-width: 910px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+    &__logo{
+        padding: 10px;
+    }
+    &__change-theme{
+        margin: 20px;
+    }
+    &__change-theme:hover {
+        color: hsl(250, 69%, 61%);
+    }
+}

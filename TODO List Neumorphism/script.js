@@ -52,7 +52,7 @@ const filterTasks = () => {
 }
 
 const filterButtonActiv = localStorage.getItem('activButton');
-console.log(filterButtonActiv);
+// console.log(filterButtonActiv);
 
 const filterChecked = () => {
     const all = document.getElementById('all');
@@ -87,7 +87,7 @@ const fillHtmlList = () => {
             case 'completed':
                 todoList.innerHTML = "";
                 if (tasks.length > 0) {
-                    filterTasks();
+                    // filterTasks();
                     tasks.forEach((item, index) => {
                         // console.log(item, index);
                         if(item.completed){
@@ -102,7 +102,7 @@ const fillHtmlList = () => {
             case 'active':
                 todoList.innerHTML = "";
                 if (tasks.length > 0) {
-                    filterTasks();
+                    // filterTasks();
                     tasks.forEach((item, index) => {
                         // console.log(item, index);
                         if(item.completed == false){
@@ -386,3 +386,105 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('theme', getCurrentTheme())
     localStorage.setItem('icon', getCurrentIcon())
 })
+
+/*==================== IMPORTANT SORT ====================*/
+const importantBtn = document.getElementById('importantBtn');
+const importantBtnIcon = document.getElementById('importantBtnIcon');
+
+importantBtn.addEventListener('click', () => {
+    if(importantBtnIcon.classList.contains('fa-caret-up')) {
+        importantBtnIcon.classList.remove('fa-caret-up')
+        importantBtnIcon.classList.toggle('fa-caret-down')
+        importantSortUp()
+    }
+
+    else if(importantBtnIcon.classList.contains('fa-caret-down')) {
+        importantBtnIcon.classList.remove('fa-caret-down')
+        importantBtnIcon.classList.toggle('fa-caret-up')
+        importantSortDown()
+    }
+})
+
+const importantSortUp = () => {
+    tasks.sort(function(a, b) {
+        return a.important - b.important
+    })
+    todoList.innerHTML = "";
+    if (tasks.length > 0) {
+        tasks.forEach((item, index) => {
+            todoList.innerHTML += createTemplate(item, index);
+        });
+        // todoItemElems = document.querySelectorAll('.todoList__list');
+    }
+}
+
+const importantSortDown = () => {
+    tasks.sort(function(a, b) {
+        return b.important - a.important
+    })
+    todoList.innerHTML = "";
+    if (tasks.length > 0) {
+        tasks.forEach((item, index) => {
+            todoList.innerHTML += createTemplate(item, index);
+        });
+        // todoItemElems = document.querySelectorAll('.todoList__list');
+    }
+}
+
+/*==================== DATA SORT ====================*/
+const dataBtn = document.getElementById('dataBtn');
+const dataBtnIcon = document.getElementById('dataBtnIcon');
+
+dataBtn.addEventListener('click', () => {
+    if(dataBtnIcon.classList.contains('fa-caret-up')) {
+        dataBtnIcon.classList.remove('fa-caret-up')
+        dataBtnIcon.classList.toggle('fa-caret-down')
+        dataSortUp()
+    }
+
+    else if(dataBtnIcon.classList.contains('fa-caret-down')) {
+        dataBtnIcon.classList.remove('fa-caret-down')
+        dataBtnIcon.classList.toggle('fa-caret-up')
+        dataSortDown()
+    }
+})
+
+const dataSortUp = () => {
+    tasks.sort(function(a, b) {
+        // let date1 = new Date(b.date)
+        // console.log(date1, a.description)
+        // let date2 = new Date(a.date, a.description)
+        // console.log(date2)
+        // // return date1 - date2
+        // return date1 > date2 ? 1 : -1
+        // console.log(`a`, new Date(a.date).valueOf(), a.description)
+        // console.log(`b`, new Date(b.date).valueOf(), b.description)
+        return new Date(a.date).valueOf() > new Date(b.date).valueOf() ? 1 : -1
+    })
+    todoList.innerHTML = "";
+    if (tasks.length > 0) {
+        tasks.forEach((item, index) => {
+            todoList.innerHTML += createTemplate(item, index);
+        });
+        // todoItemElems = document.querySelectorAll('.todoList__list');
+    }
+}
+
+const dataSortDown = () => {
+    tasks.sort(function(a, b) {
+        // let date1 = new Date(a.date)
+        // console.log(date1)
+        // let date2 = new Date(b.date)
+        // console.log(date2)
+        // return date1 > date2 ? 1 : -1
+        // return a.date > b.date ? 1 : -1
+        return new Date(b.date).valueOf() > new Date(a.date).valueOf() ? 1 : -1
+    })
+    todoList.innerHTML = "";
+    if (tasks.length > 0) {
+        tasks.forEach((item, index) => {
+            todoList.innerHTML += createTemplate(item, index);
+        });
+        // todoItemElems = document.querySelectorAll('.todoList__list');
+    }
+}

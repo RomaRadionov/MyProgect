@@ -59,7 +59,7 @@
         <h1>ToDoList</h1>
         <div class="inputField">
             <input class="inputField__description" type="text" placeholder="Create a new task..." name="addItem" id="description-task">
-            <div class="entering-numbers" title="Важніть завдання">
+            <div class="entering-numbers" title="Важливість завдання">
                 <button class="entering-numbers__arrow-left left" id="left"><i class="fas fa-caret-left"></i></button>
                 <input class="entering-numbers__important" type="text" value="1" id="important" readonly>
                 <button class="entering-numbers__arrow-right right" id="right"><i class="fas fa-caret-right"></i></button>
@@ -83,6 +83,14 @@
                     <span>Completed</span>
                 </label>
             </div>
+            <button class="data-sort button" id="dataBtn">
+                <span>Data</span>
+                <i class="fas fa-caret-up" id="dataBtnIcon"></i>
+            </button>
+            <button class="important-sort button" id="importantBtn">
+                <span>Important</span>
+                <i class="fas fa-caret-up" id="importantBtnIcon"></i>
+            </button>
             <button class="bottom-items__clear button">Clear Completed</button>
         </div>
         <!--==================== MAIN-TodoList ====================-->

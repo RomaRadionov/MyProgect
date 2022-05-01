@@ -1,0 +1,41 @@
+/*==================== VARIABLES ====================*/
+:root{
+    /*========== Colors ==========*/
+    --BxSi:6px 6px 8px rgb(0 0 0 / 50%),
+    -6px -6px 10px rgb(255 255 255 / 5%),
+        inset -8px -8px 12px rgb(255 255 255 / 5%),
+        inset 5px 5px 8px rgb(0 0 0 / 50%);
+
+    --PSD-3d:7px 7px 15px #0c0e10c9,
+        -8px -8px 15px #14191dd1,
+        inset -5px -4px 13px 0px rgb(0 0 0 / 52%),
+        inset 6px 7px 12px 0px #1b1f23cf;
+    --BxS: -3px -3px 10px rgb(255 255 255 / 5%),
+    3px 3px 15px rgb(0 0 0 / 50%);
+    --hoverS:inset -3px -3px 10px rgb(255 255 255 / 5%),
+    inset 3px 3px 15px rgb(0 0 0 / 50%);
+    --title-color: hsl(250, 8%, 95%);
+    --done: hsl(0, 34%, 14%);
+    --text-color: hsl(264, 27%, 68%);
+}
+
+body.light{
+    --BxSi:6px 6px 8px rgba(13, 39, 80, 0.25),
+    -6px -6px 10px #fff,
+    inset -8px -8px 12px rgba(255,255,255,0.7),
+    inset 5px 5px 8px rgba(13,39,80,0.2);
+
+    --PSD-3d:7px 7px 15px #45566754,
+    -8px -8px 15px #5165790a,
+        inset -5px -4px 13px 0px #51657959,
+        inset 6px 7px 12px 0px #fffffff0;
+    --BxS:4px 4px 8px rgba(13, 39,80,0.25),
+        -4px 4px 8px #fff;
+    --hoverS:-3px -3px 7px #a0a0a032,
+        3px 3px 5px rgba(94, 104, 121, 0.417);
+    --title-color: hsl(250, 8%, 15%);
+    --backcolor: hsl(210, 10%, 92%);
+    background: #e8eaec;
+    --done: hsl(137, 27%, 81%);
+    --text-color: hsl(264, 36%, 37%);
+}
