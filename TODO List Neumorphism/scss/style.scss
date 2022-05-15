@@ -176,6 +176,13 @@ li:hover{
         font-weight: bold;
         color: var(--title-color);
     }
+    input{
+        // -webkit-appearance: none;
+        outline: none;
+    }
+    &__filter label:hover i{
+        color: #00acee;
+    }
 }
 .hidden{
     display: none;

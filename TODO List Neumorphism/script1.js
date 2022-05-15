@@ -7,11 +7,10 @@ const modalDelete = document.querySelector('.modal__delete');
 let tasks; // об'єкт
 !localStorage.tasks ? tasks = [] : tasks = JSON.parse(localStorage.getItem('tasks')) //  при загрузкі сторінки робимо перевірку. !localStorage.tasks ? tasks = [] якщо в нас немає завдань то наш массив пустий. : tasks = JSON.parse(localStorage.getItem('tasks')) а якщо в нас є завдання то беремо його методом getItem в форматі JSON за допомогою метода parse щоб перетворити зі строки в об'єкт
 
-let todoItemElems = {};
-todoItemElems = document.querySelectorAll('.todoList__list');
+let todoItemElems = [];
 
 function Task(description, impor) {  // створюємо функцію яка буде створювати в об'єкті tasks об'єкт з параметрами які далі описані
-    this.description = description; // ключ об'єкта description буде дорівнювати description(опис таски який вводить користувач в інпут) який приймає функція
+    this.description = description; // ключ об'єкта description буде дорівнювати description(опис таски яки вводить користувач в інпут) який приймає функція
     this.completed = false;  //Ключ об'єкта який буде при створенні за замовчанням false(незавершений)
     this.date = genDate();
     this.important = impor;
@@ -27,7 +26,7 @@ const createTemplate = (task, index) => {
                     <div class="todoList__checkmark">&#x2713;</div>
                 </div>
                 <div class="todoList__date">${task.date}</div>
-                <div class="entering-numbers" title="Важливість завдання">
+                <div class="entering-numbers" title="Важніть завдання">
                     <button class="entering-numbers__arrow-left" id="left"><i class="fas fa-caret-left"></i></button>
                     <input class="entering-numbers__important" type="text" value="${task.important}" id="important" readonly>
                 <button class="entering-numbers__arrow-right" id="right"><i class="fas fa-caret-right"></i></button>
@@ -91,7 +90,7 @@ const fillHtmlList = () => {
                     // filterTasks();
                     tasks.forEach((item, index) => {
                         // console.log(item, index);
-                        if(item.completed == true){
+                        if(item.completed){
                             todoList.innerHTML += createTemplate(item, index);
                         }
                     });
@@ -452,6 +451,14 @@ dataBtn.addEventListener('click', () => {
 
 const dataSortUp = () => {
     tasks.sort(function(a, b) {
+        // let date1 = new Date(b.date)
+        // console.log(date1, a.description)
+        // let date2 = new Date(a.date, a.description)
+        // console.log(date2)
+        // // return date1 - date2
+        // return date1 > date2 ? 1 : -1
+        // console.log(`a`, new Date(a.date).valueOf(), a.description)
+        // console.log(`b`, new Date(b.date).valueOf(), b.description)
         return new Date(a.date).valueOf() > new Date(b.date).valueOf() ? 1 : -1
     })
     todoList.innerHTML = "";
@@ -465,6 +472,12 @@ const dataSortUp = () => {
 
 const dataSortDown = () => {
     tasks.sort(function(a, b) {
+        // let date1 = new Date(a.date)
+        // console.log(date1)
+        // let date2 = new Date(b.date)
+        // console.log(date2)
+        // return date1 > date2 ? 1 : -1
+        // return a.date > b.date ? 1 : -1
         return new Date(b.date).valueOf() > new Date(a.date).valueOf() ? 1 : -1
     })
     todoList.innerHTML = "";

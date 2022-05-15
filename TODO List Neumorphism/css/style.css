@@ -600,6 +600,14 @@ li:hover {
   color: var(--title-color);
 }
 
+.bottom-items input {
+  outline: none;
+}
+
+.bottom-items__filter label:hover i {
+  color: #00acee;
+}
+
 .hidden {
   display: none;
 }
