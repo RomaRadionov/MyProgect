@@ -1,0 +1,15 @@
+.animate-password {
+    background-image: linear-gradient(90deg, red 50%, transparent 50%);
+    background-size: 200%;
+    background-position-x: 100%;
+    transition: all ease 1s;
+    animation-name: passwordanimation;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes passwordanimation {
+    0% {background-position-x: 100%;}
+    100% {background-position-x: 0;}
+}
