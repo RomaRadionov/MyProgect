@@ -5,19 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/1caffb19f3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/33677b8b9b.js" crossorigin="anonymous"></script>
     <title>To Do List</title>
 </head>
 <body class="light" id="body">
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-        <nav class="header__nav">
-            <a href="#" class="header__logo"><h1 class="logo">ToDo</h1></a>
-            <!-- Theme change button -->
-            <i class="far fa-moon header__change-theme" id="theme-button"></i>
-            <!-- <i class="fas fa-sun"></i> -->
-        </nav>
-    </header>
+    <section class="background">
     <!--==================== FORM-BOX ====================-->
     <div class="form-box" id="form-box">
         <div class="form-box__buttons">
@@ -56,7 +48,16 @@
 
     <!--==================== MAIN ====================-->
     <div class="main" id="main">
-        <h1>ToDoList</h1>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="header__nav">
+                <a href="#" class="header__logo"><h1 class="logo">ToDo</h1></a>
+                <!-- Theme change button -->
+                <i class="far fa-moon header__change-theme" id="theme-button"></i>
+                <!-- <i class="fas fa-sun"></i> -->
+            </nav>
+        </header>
+        <!-- <h1>ToDoList</h1> -->
         <div class="inputField">
             <input class="inputField__description" type="text" placeholder="Create a new task..." name="addItem" id="description-task">
             <div class="entering-numbers" title="Важливість завдання">
@@ -86,7 +87,7 @@
                     <!-- <span>Completed</span> -->
                 </label>
             </div>
-            <button class="data-sort button" id="dataBtn">
+            <button class="data-sort button" id="dataBtn" title="Дата">
                 <i class="far fa-calendar-alt"></i>
                 <!-- <span>Data</span> -->
                 <i class="fas fa-caret-up" id="dataBtnIcon"></i>
@@ -96,9 +97,9 @@
                 <!-- <span>Important</span> -->
                 <i class="fas fa-caret-up" id="importantBtnIcon"></i>
             </button>
-            <button class="bottom-items__clear button" title="Delete completed">
-                <i class="far fa-trash-alt"></i>
-            </button>
+            <i class="far fa-trash-alt deleteCompleted" title="Delete completed" onclick="deleteAllCompleted(tasks)"></i>
+            <!-- <button class="bottom-items__clear button" title="Delete completed">
+            </button> -->
         </div>
         <!--==================== MAIN-TodoList ====================-->
         <ul class="todoList" id="todoList"></ul>
@@ -107,5 +108,6 @@
     <div class="modal-active" id="modal-active"></div>
 
     <script src="./script.js"></script>
+    </section>
 </body>
 </html>

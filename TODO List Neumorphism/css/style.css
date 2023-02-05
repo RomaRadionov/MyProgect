@@ -15,8 +15,11 @@
   --hoverS:inset -3px -3px 10px rgb(255 255 255 / 5%),
     inset 3px 3px 15px rgb(0 0 0 / 50%);
   --title-color: hsl(250, 8%, 95%);
-  --done: hsl(0, 34%, 14%);
+  --done: hsl(205, 25%, 13%);
   --text-color: hsl(264, 27%, 68%);
+  --checkbox-color: #4cd964;
+  --checkboxDone-color: #c5ccd3;
+  --background-task: #41413d;
 }
 
 body.light {
@@ -37,6 +40,12 @@ body.light {
   background: #e8eaec;
   --done: hsl(137, 27%, 81%);
   --text-color: hsl(264, 36%, 37%);
+  --checkboxDone-color: #c5ccd3;
+  --background-task: none;
+}
+
+body.light .background::before {
+  content: none;
 }
 
 /*==================== HEADER ====================*/
@@ -200,6 +209,50 @@ body.light {
 }
 
 /*==================== MAIN ====================*/
+.background {
+  position: relative;
+  margin: 20px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 122, 255, 0.5);
+          box-shadow: 0 5px 15px rgba(0, 122, 255, 0.5);
+  -webkit-animation: pulse 2s infinite;
+          animation: pulse 2s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+            box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+  }
+  60% {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+            box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+            box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+  }
+  60% {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+            box-shadow: 0 3px 7px rgba(0, 122, 255, 0.2);
+  }
+}
+
+.background:hover {
+  -webkit-animation: none;
+          animation: none;
+}
+
 .button {
   height: 35px;
   font-weight: bolder;
@@ -225,12 +278,31 @@ body.light {
           border-radius: 8px;
 }
 
+.background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.9))), url(../bg.webp);
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../bg.webp);
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../bg.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../bg.webp);
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+          background-size: cover;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  z-index: -1;
+}
+
 .inputField {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 15px;
+  margin: 15px 0;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -389,13 +461,29 @@ body.light {
 }
 
 body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
-  background: #242425;
   padding: 0 10px;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.9))), url(../bg.webp);
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(../bg.webp);
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(../bg.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(../bg.webp);
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+          background-size: cover;
+  z-index: 1;
 }
 
 button {
@@ -472,6 +560,7 @@ li:hover {
 
 .todoList__list {
   position: relative;
+  background: var(--background-task);
 }
 
 .todoList__list-nav {
@@ -491,7 +580,7 @@ li:hover {
   width: 17px;
   height: 17px;
   left: 10px;
-  background: #8add8a;
+  background: var(--checkboxDone-color);
   font-size: 15px;
   text-align: center;
   -webkit-border-radius: 50px;
@@ -506,7 +595,6 @@ li:hover {
 .todoList__ckeckbox {
   width: 17px;
   height: 17px;
-  background: #8add8a;
   font-size: 15px;
   text-align: center;
   -webkit-border-radius: 50px;
@@ -531,7 +619,7 @@ li:hover {
 .todoList__edite i {
   margin: 0 10px;
   font-size: 18px;
-  color: #00acee;
+  color: #007aff;
 }
 
 .todoList__edite {
@@ -559,7 +647,7 @@ li:hover {
   width: 17px;
   height: 17px;
   top: 15px;
-  background: #8add8a;
+  background: var(--checkbox-color);
   font-size: 12px;
   font-weight: bold;
   text-align: center;
@@ -605,7 +693,15 @@ li:hover {
 }
 
 .bottom-items__filter label:hover i {
-  color: #00acee;
+  color: #007aff;
+}
+
+.bottom-items .deleteCompleted {
+  padding: 5px;
+}
+
+.bottom-items .deleteCompleted:hover {
+  color: #ef6767;
 }
 
 .hidden {

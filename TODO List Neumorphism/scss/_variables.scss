@@ -15,8 +15,12 @@
     --hoverS:inset -3px -3px 10px rgb(255 255 255 / 5%),
     inset 3px 3px 15px rgb(0 0 0 / 50%);
     --title-color: hsl(250, 8%, 95%);
-    --done: hsl(0, 34%, 14%);
+    // --done: hsl(0, 34%, 14%);
+    --done: hsl(205, 25%, 13%);
     --text-color: hsl(264, 27%, 68%);
+    --checkbox-color: #4cd964;
+    --checkboxDone-color: #c5ccd3;
+    --background-task: #41413d;
 }
 
 body.light{
@@ -36,6 +40,11 @@ body.light{
     --title-color: hsl(250, 8%, 15%);
     --backcolor: hsl(210, 10%, 92%);
     background: #e8eaec;
+    .background::before{
+        content: none;
+    }
     --done: hsl(137, 27%, 81%);
     --text-color: hsl(264, 36%, 37%);
+    --checkboxDone-color: #c5ccd3;
+    --background-task: none;
 }

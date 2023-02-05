@@ -199,10 +199,6 @@ const deleteTaskModal = index => {
 
 
 const closeModalDeleteWindow = () => {
-    // const modalClose = document.querySelector('.modal__content');
-    // if(e.target.classList.value = modalClose){
-    //     modal.innerHTML = '';
-    // }else
     modal.innerHTML = '';
 }
 
@@ -232,6 +228,18 @@ const deleteTask = index => {
     updateLocal();
     fillHtmlList();
 }
+
+/*==================== ВИДАЛЯЄМО ВСІ ЗАВЕРШЕНІ ТАСКИ ====================*/
+const deleteAllCompleted = (tasks) => {
+
+    filterObject(tasks, "completed", "true")
+}
+
+const filterObject = (obj, filter, filterValue) =>
+    Object.keys(obj).reduce((acc, val) =>
+            (obj[val][filter] === filterValue ? acc : {...acc,[val]: obj[val]}),
+        {}
+    )
 
 /*==================== РЕДАГУЄМО ТАСКУ ====================*/
 const editeTaskModal = (index) => {

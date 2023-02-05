@@ -1,4 +1,30 @@
 /*==================== MAIN ====================*/
+.background{
+	position: relative;
+    margin: 20px;
+    box-shadow: 0 5px 15px rgba(0,122,255,.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 3px 7px rgba(0,122,255,.2);
+        box-shadow: 0 3px 7px rgba(0,122,255,.2);
+    }
+    60% {
+        -moz-box-shadow: 0 5px 15px rgba(0,122,255,.3);
+        box-shadow: 0 5px 15px rgba(0,122,255,.3);
+    }
+    100% {
+        -moz-box-shadow: 0 3px 7px rgba(0,122,255,.2);
+        box-shadow: 0 3px 7px rgba(0,122,255,.2);
+    }
+}
+
+.background:hover{
+    animation: none;
+}
+
 .button{
     height: 35px;
     font-weight: bolder;
@@ -20,9 +46,23 @@
     border-radius: 8px;
 }
 
+.background::before{
+    content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),url(../bg.webp);
+	background-attachment: fixed;
+	background-size: cover;
+	filter: blur(5px);
+    z-index: -1;
+}
+
 .inputField{
     display: flex;
-    margin-bottom: 15px;
+    margin: 15px 0;
     justify-content: space-between;
     align-items: center;
     &__description{
